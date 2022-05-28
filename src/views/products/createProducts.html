@@ -1,0 +1,68 @@
+{% extends 'layouts/base.html' %} {% block title %} Create Product {% endblock %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col">
+            <form method="POST" class="container">
+                <div class="mb-3">
+                    <label for="category_id">Category</label>
+                    <!-- <input class="form-control" type="number" id="category_id" name="category_id" required> -->
+                    <select name="categories" class="form-control" id="category_id" required>
+                        <option selected ='true' disabled>categories</option>
+                        {% if categories %}
+                            {% for category in categories %}
+                                {% if pt == category[0] %}
+                                    <option selected='True' disabled value="{{category[0]}}">{{category[2]}}-{{category[3]}}</option>
+                                {% else %}
+                                    <option value="{{category[0]}}">{{category[2]}}-{{category[3]}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif%}
+                    </select>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="supplier_id">Supplier</label>
+                    <!-- <input class="form-control" type="number" id="supplier_id" name="supplier_id" required> -->
+                    <select name="supliers" class="form-control" id="supplier_id" required>
+                        <option selected ='true' disabled>suppliers</option>
+                        {% if suppliers %}
+                            {% for supplier in suppliers %}
+                                {% if pt == supplier[0] %}
+                                    <option selected='True' disabled value="{{supplier[0]}}">{{supplier[1]}}-{{supplier[2]}}</option>
+                                {% else %}
+                                    <option value="{{supplier[0]}}">{{supplier[1]}}-{{supplier[2]}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif%}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description">Description</label>
+                    <input class="form-control" type="text" id="description" name="description" required>
+                </div>
+                <div class="mb-3">
+                    <label for="value">Value</label>
+                    <input class="form-control" type="text" id="value" name="value" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date_admission">Date Admission</label>
+                    <input class="form-control" type="date" id="date_admission" name="date_admission" required>
+                </div>
+                <div class="mb-3">
+                    <label for="due_date">Due Date</label>
+                    <input class="form-control" type="date" id="due_date" name="due_date" required>
+                </div>
+                <button type="submit" class="btn btn-success">Save</button>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %} {% block title %} Edit Categories {% endblock %} {% block content %}
+<div class="container mt-3 mb-3">
+    <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="name">Name</label>
+                    <input class="form-control" value='{{category[2]}}' type="text" name="name" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="barcode">barcode</label>
+                    <input class="form-control" value='{{category[3]}}' type="text" name="barcode" id="barcode">
+                </div>
+                <button class="btn btn-success" type="submit">Save</button>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+{% endblock %}
