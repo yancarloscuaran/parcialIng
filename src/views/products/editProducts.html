@@ -1,38 +1,41 @@
-{% extends 'layouts/base.html' %} {% block title %} Edit Product {% endblock %} {% block content %}
+{% extends 'layouts/base.html' %} {% block title %} Editar Producto {% endblock %} {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-3"></div>
         <div class="col">
+            <center>
+                <h2><b>Editar producto</b></h2>
+            </center>
             <form method="POST" class="container">
                 <div class="mb-3">
-                    <label for="category_id">category_id</label>
+                    <label for="category_id">Categoria</label>
                     <input class="form-control" type="number" id="category_id" name="category_id" value="{{product[1]}}">
                 </div>
                 <div class="mb-3">
-                    <label for="supplier_id">supplier_id</label>
+                    <label for="supplier_id">Proveedor</label>
                     <input class="form-control" type="number" id="supplier_id" name="supplier_id" value="{{product[2]}}">
                 </div>
                 <div class="mb-3">
-                    <label for="name">name</label>
+                    <label for="name">Nombre</label>
                     <input class="form-control" type="text" id="name" name="name" value="{{product[3]}}">
                 </div>
                 <div class="mb-3">
-                    <label for="description">description</label>
+                    <label for="description">Descripcion</label>
                     <input class="form-control" type="text" id="description" name="description" value="{{product[4]}}">
                 </div>
                 <div class="mb-3">
-                    <label for="value">value</label>
+                    <label for="value">Precio</label>
                     <input class="form-control" type="text" id="value" name="value" value="{{product[5]}}">
                 </div>
                 <div class="mb-3">
-                    <label for="date_admission">date_admission</label>
-                    <input class="form-control" type="date" id="date_admission" name="date_admission" value="{{poduct[6]}}">
+                    <label for="date_admission">Fecha ingreso</label>
+                    <input class="form-control" type="date" id="date_admission" name="date_admission" value="{{product[6]}}">
                 </div>
                 <div class="mb-3">
-                    <label for="due_date">due_date</label>
+                    <label for="due_date">Fecha vencimiento</label>
                     <input class="form-control" type="date" id="due_date" name="due_date" value="{{product[7]}}">
                 </div>
-                <button type="submit" class="btn btn-success">Guardar</button>
+                <button type="submit" class="btn btn-success"><i class="bi bi-save-fill"></i>r</button>
             </form>
         </div>
         <div class="col-3"></div>

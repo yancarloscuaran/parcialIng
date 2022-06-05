@@ -1,4 +1,4 @@
-{% extends 'layouts/base.html' %} {% block title %} categories {% endblock %} {% block content %}
+{% extends 'layouts/base.html' %} {% block title %} Categorias {% endblock %} {% block content %}
 <style>
     table {
         background-color: rgba(1, 1, 1, 0.453);
@@ -18,7 +18,7 @@
         <form method="POST">
             <div class="col"></div>
             <select name="period" class="form-control">
-                <option selected='true' disabled>Period</option>
+                <option selected='true' disabled>Supermercado</option>
                 {% if periods %}
                     {% for period in periods %}
                         {% if pd == period[0] %}
@@ -30,22 +30,23 @@
                 {% endif%}
             </select>
     </div>
-    <div class="col-3"> <button type="submit" class="btn btn-dark">Choose</button></div>
+    <div class="col-3"> <button type="submit" class="btn btn-dark">Buscar</button></div>
     </form>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-1"></div>
         <div class="col">
-            <a class="btn btn-outline-dark" href="{{url_for('createCategories')}}"><i class="bi bi-plus-circle-fill"></i><b> New Category</b> </a>
+            <a class="btn btn-outline-dark" href="{{url_for('createCategories')}}"><i class="bi bi-plus-circle-fill"></i><b> Nueva categoria</b> </a>
             <br>
             <br>
+            <h2><b>Categorias</b></h2>
             <table class="table table-responsive">
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Barcode</th>
+                        <th>Nombre</th>
+                        <th>Codigo barras</th>
                         <th></th>
                     </tr>
                 </thead>

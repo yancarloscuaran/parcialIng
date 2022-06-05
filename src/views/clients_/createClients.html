@@ -1,20 +1,24 @@
-{% extends 'layouts/base.html' %} {% block title %} Crear categorias {% endblock %} {% block content %}
+{% extends 'layouts/base.html' %} {% block title %} Crear clientes {% endblock %} {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-3">
         </div>
         <div class="col">
             <center>
-                <h2><b>Crear categoria</b></h2>
+                <h2><b>Crear cliente</b></h2>
             </center>
             <form method="POST">
                 <div class="mb-3">
-                    <label for="name">Nombre</label>
+                    <label for="identification">Identificacion</label>
+                    <input class="form-control" type="text" name="identification" id="identification">
+                </div>
+                <div class="mb-3">
+                    <label for="name">Nambre</label>
                     <input class="form-control" type="text" name="name" id="name">
                 </div>
                 <div class="mb-3">
-                    <label for="barcode">Codigo barras</label>
-                    <input class="form-control" type="text" name="barcode" id="barcode">
+                    <label for="contact">Contacto</label>
+                    <input class="form-control" type="text" name="contact" id="contact">
                 </div>
                 <button class="btn btn-success" type="submit"><i class="bi bi-save-fill"></i></button>
             </form>

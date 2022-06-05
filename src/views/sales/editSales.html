@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html' %} {% block title %} Editar venta {% endblock %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col">
+            <center>
+                <h2><b>Editar ventas</b></h2>
+            </center>
+            <form method="POST" class="container">
+                <div class="mb-3">
+                    <label for="cashier_id">Cajero</label>
+                    <input class="form-control" type="number" id="cashier_id" name="cashier_id" value="{{sale[1]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="client_id">Cliente</label>
+                    <input class="form-control" type="number" id="client_id" name="client_id" value="{{sale[2]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="product_id">Producto</label>
+                    <input class="form-control" type="number" id="product_id" name="product_id" value="{{sale[3]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="amount">Cantidad</label>
+                    <input class="form-control" type="number" id="amount" name="amount" value="{{sale[4]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="value">Precio</label>
+                    <input class="form-control" type="text" id="value" name="value" value="{{sale[5]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="purchase_date">Fecha compra</label>
+                    <input class="form-control" type="date" id="purchase_date" name="purchase_date" value="{{sale[6]}}">
+                </div>
+                <button type="submit" class="btn btn-success"><i class="bi bi-save-fill"></i></button>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -44,7 +44,7 @@ def createProducts():
 @app.route('/Edit/products/<idProduct>', methods=['GET','POST'])
 def editProducts(idProduct):
     if request.method == 'GET': 
-        return render_template('products/createProducts.html', product = PRODUCTMODEL.findProduct(idProduct), periods = PERIODMODEL.listPeriods())
+        return render_template('products/editProducts.html', product = PRODUCTMODEL.findProduct(idProduct), periods = PERIODMODEL.listPeriods(), categories = CATEGORYS.listCategories(Global.session['period']), pt = int(Global.session['period']))
     data = {
         'category_id' : request.form.get('category_id'),
         'supplier_id' : request.form.get('supplier_id'),
@@ -58,6 +58,7 @@ def editProducts(idProduct):
     }
     PRODUCTMODEL.editProduct(data)
     return redirect(url_for('indexProducts'))
+    
 
 @app.route('/Remove/products/<idProduct>')
 def removeProducts(idProduct):

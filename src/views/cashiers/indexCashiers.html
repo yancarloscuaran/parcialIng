@@ -1,4 +1,4 @@
-{% extends 'layouts/base.html' %} {% block title %} Proveedores {% endblock %} {% block content %}
+{% extends 'layouts/base.html' %} {% block title %} Cajeros {% endblock %} {% block content %}
 <style>
     table {
         background-color: rgba(1, 1, 1, 0.453);
@@ -33,30 +33,36 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col">
-            <a class="btn btn-outline-dark" href="{{url_for('createSuppliers')}}"><i class="bi bi-plus-circle-fill"></i><b> Nuevo proveedor</b> </a>
+            <a class="btn btn-outline-dark" href="{{url_for('createCashiers')}}"><i class="bi bi-plus-circle-fill"></i> Nuevo Cajero</a>
             <br>
             <br>
-            <h2><b> Proveedores</b></h2>
+            <h2><b>Cajeros</b></h2>
             <table class="table table-responsive">
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>
+                        <th>Identificacion</th>
                         <th>Nombre</th>
-                        <th>Contactp</th>
-                        <th>Correo</th>
+                        <th>Contacto</th>
+                        <th>Direccion</th>
+                        <th>Hora entrada</th>
+                        <th>Hora salida</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    {% for supplier in suppliers %}
+                    {% for cashier in cashiers %}
                     <tr>
                         <td>{{loop.index}}</td>
-                        <td>{{supplier[1]}}</td>
-                        <td>{{supplier[2]}}</td>
-                        <td>{{supplier[3]}}</td>
+                        <td>{{cashier[1]}}</td>
+                        <td>{{cashier[2]}}</td>
+                        <td>{{cashier[3]}}</td>
+                        <td>{{cashier[4]}}</td>
+                        <td>{{cashier[5]}}</td>
+                        <td>{{cashier[6]}}</td>
                         <td>
-                            <a class="btn btn-success" href="{{url_for('editSuppliers', idSupplier = supplier[0])}}"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btn btn-danger" href="{{url_for('removeSuppliers', idSupplier = supplier[0])}}"><i class="bi bi-trash-fill"></i></a>
+                            <a class="btn btn-success" href="{{url_for('editCashiers', idCashier = cashier[0])}}"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-danger" href="{{url_for('removeCashiers', idCashier = cashier[0])}}"><i class="bi bi-trash-fill"></i></a>
                         </td>
                     </tr>
                     {% endfor %}

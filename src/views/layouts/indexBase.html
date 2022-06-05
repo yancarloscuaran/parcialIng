@@ -41,22 +41,31 @@
             <div class="ps-3 navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
-                        <a class="nav-link ps-4" href="{{url_for('index')}}"> <i class="icon bi-house-fill"></i> <b>Home</b> </a>
+                        <a class="nav-link ps-4" href="{{url_for('index')}}"> <i class="icon bi-house-fill"></i> <b>Inico</b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ps-4" href="{{url_for('indexProducts')}}"> <i class="icon bi-cart-fill"></i><b>Products</b> </a>
+                        <a class="nav-link ps-4" href="{{url_for('indexCashiers')}}"> <i class="icon bi bi-person-workspace"></i><b>Cajeros</b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ps-4" href="{{url_for('indexSuppliers')}}"> <i class="icon bi-person-fill"></i><b>Suppliers</b> </a>
+                        <a class="nav-link ps-4" href="{{url_for('indexSuppliers')}}"> <i class="icon bi bi-truck"></i><b>Proveedores</b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ps-4" href="{{url_for('indexCategories')}}"><i class="icon bi-list-ul"></i> <b>Categories</b></a>
+                        <a class="nav-link ps-4" href="{{url_for('indexCategories')}}"><i class="icon bi-list-ul"></i> <b>Categorias</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-4" href="{{url_for('indexProducts')}}"> <i class="icon bi-cart-fill"></i><b>Productos</b> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-4" href="{{url_for('indexClients')}}"> <i class="icon bi bi-person-fill"></i><b>Clientes</b> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-4" href="{{url_for('indexSales')}}"> <i class="icon bi bi-bag-check-fill"></i><b>Ventas</b> </a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
+                <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
+                </form> -->
             </div>
 
         </div>

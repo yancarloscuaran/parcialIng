@@ -1,4 +1,4 @@
-{% extends 'layouts/base.html' %} {% block title %} Index {% endblock %} {% block content %}
+{% extends 'layouts/base.html' %} {% block title %} Inicio {% endblock %} {% block content %}
 <style>
     table {
         background-color: rgba(1, 1, 1, 0.453);
@@ -12,15 +12,16 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col">
-            <a class="btn btn-outline-dark" href="{{url_for('createPeriod')}}"><i class="bi bi-plus-circle-fill"></i><b> New Period</b></a>
+            <a class="btn btn-outline-dark" href="{{url_for('createPeriod')}}"><i class="bi bi-plus-circle-fill"></i><b> Nuevo supermercado</b></a>
             <br>
             <br>
+            <h2>Supermercados</h2>
             <table class="table table-responsive">
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>
-                        <th>Date</th>
-                        <th>Period</th>
+                        <th>Supermercado</th>
+                        <th>NIT</th>
                         <th></th>
                     </tr>
                 </thead>

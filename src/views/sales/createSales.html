@@ -1,0 +1,78 @@
+{% extends 'layouts/base.html' %} {% block title %} Crear venta {% endblock %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col">
+            <center>
+                <h2><b>Crear venta</b></h2>
+            </center>
+            <form method="POST" class="container">
+                <div class="mb-3">
+                    <label for="cashier_id">Cajero</label>
+                    <select name="cashier_id" class="form-control" id="cashier_id" required>
+                        <option selected ='true' disabled>Cajeros</option>
+                        {% if cashiers %}
+                            {% for cashier in cashiers %}
+                                {% if pt == cashier[0] %}
+                                    <option selected='True' disabled value="{{cashier[0]}}">{{cashier[2]}}-{{cashier[3]}}</option>
+                                {% else %}
+                                    <option value="{{cashier[0]}}">{{cashier[2]}}-{{cashier[3]}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif%}
+                    </select>
+                    <a class="btn btn-dark" href="{{url_for('createCashiers')}}"><i class="bi bi-person-plus-fill"></i></a>
+                    <!-- <div class="col-3"> <button type="submit" class="btn btn-dark"><i class="bi bi-person-plus-fill"></i></button></div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="client_id">Cliente</label>
+                    <select name="client_id" class="form-control" id="client_id" required>
+                        <option selected ='true' disabled>Clientes</option>
+                        {% if clients %}
+                            {% for client in clients %}
+                                {% if pt == client[0] %}
+                                    <option selected='True' disabled value="{{client[0]}}">{{client[2]}}-{{client[1]}}</option>
+                                {% else %}
+                                    <option value="{{client[0]}}">{{client[2]}}-{{client[1]}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif%}
+                    </select>
+                    <a class="btn btn-dark" href="{{url_for('createClients')}}"><i class="bi bi-person-plus-fill"></i></a>
+                </div>
+                <div class="mb-3">
+                    <label for="product_id">Producto</label>
+                    <select name="product_id" class="form-control" id="product_id" required>
+                        <option selected ='true' disabled>Productos</option>
+                        {% if products %}
+                            {% for product in products %}
+                                {% if pt == product[0] %}
+                                    <option selected='True' disabled value="{{product[0]}}">{{product[3]}}-{{product[5]}}</option>
+                                {% else %}
+                                    <option value="{{product[0]}}">{{product[3]}}-{{product[5]}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif%}
+                    </select>
+                    <a class="btn btn-dark" href="{{url_for('createProducts')}}"><i class="bi bi-plus-square-fill"></i></a>
+                </div>
+                <div class="mb-3">
+                    <label for="amount">Cantidad</label>
+                    <input class="form-control" type="text" id="amount" name="amount" required>
+                </div>
+                <div class="mb-3">
+                    <label for="value">Precio</label>
+                    <input class="form-control" type="text" id="value" name="value" required>
+                </div>
+                <div class="mb-3">
+                    <label for="purchase_date">Fecha compra</label>
+                    <input class="form-control" type="date" id="purchase_date" name="purchase_date" required>
+                </div>
+                <button type="submit" class="btn btn-success"><i class="bi bi-save-fill"></i></button>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+{% endblock %}

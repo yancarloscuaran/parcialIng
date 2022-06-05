@@ -1,0 +1,135 @@
+{% extends 'layouts/indexImprimir.html' %} {% block title %} Factura venta {% endblock %} {% block content %}
+<style>
+    .factura {
+        table-layout: fixed;
+    }
+    
+    .fact-info>div>h5 {
+        font-weight: bold;
+    }
+    
+    div.class {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png");
+        background-repeat: no-repeat;
+    }
+    
+    .factura>thead {
+        border-top: solid 3px #000;
+        border-bottom: 3px solid #000;
+    }
+    
+    .factura>thead>tr>th:nth-child(2),
+    .factura>tbod>tr>td:nth-child(2) {
+        width: 300px;
+    }
+    
+    .factura>thead>tr>th:nth-child(n+3) {
+        text-align: right;
+    }
+    
+    .factura>tbody>tr>td:nth-child(n+3) {
+        text-align: right;
+    }
+    
+    .factura>tfoot>tr>th,
+    .factura>tfoot>tr>th:nth-child(n+3) {
+        font-size: 24px;
+        text-align: right;
+    }
+    
+    .cond {
+        border-top: solid 2px #000;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+
+        <h1>Factura</h1>
+
+        <div class="row my-3">
+            <div class="col-10">
+                <h2>Supermercado La Economia</h2>
+                <p>Barrio. Esmeraldas</p>
+                <p>Direccion. #18-33 a, Cl. 11 #1863, Mocoa, Putumayo</p>
+                <p>local 01</p>
+            </div>
+            <div class="class col-2">
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row fact-info mt-3">
+            <div class="col-3">
+                <h5>Facturar a</h5>
+                <p>
+                    {{sale[2]}}
+                </p>
+            </div>
+            <div class="col-3">
+                <h5>Cajero</h5>
+                <p>
+                    {{sale[1]}}
+                </p>
+            </div>
+            <div class="col-3">
+                <h5>N° de factura</h5>
+                <h5>Fecha de compra</h5>
+            </div>
+            <div class="col-3">
+                <h5>{{sale[0]}}</h5>
+                <p>{{sale[6]}}</p>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <table class="table table-borderless factura">
+                <thead>
+                    <tr>
+                        <th>Cant.</th>
+                        <th>Producto</th>
+                        <th>P. Unitario</th>
+                        <th>V. Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{sale[4]}}</td>
+                        <td>{{sale[3]}}</td>
+                        <td>{{sale[5]}}&nbsp;$</td>
+                        <td>{{sale[5]}}&nbsp;$</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Total Factura</th>
+                        <th>{{sale[5]}}&nbsp;$</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="cond row">
+            <div class="col-12 mt-3">
+                <h4>Condiciones y formas de pago</h4>
+                <p>El pago se puede realizar en efectivo o con targeta de credito.</p>
+                <p>
+                    Banco Bancolombia
+                    <br /> IBAN: DO XX 0075 XXXX XX XX XXXX XXXX
+                    <br /> Código: BPDODOSXXXX
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<center><button type="submit" onclick="imprimir();">Imprimir</button></center><br><br><br>
+<script>
+    function imprimir() {
+        window.print();
+    }
+</script>
+{% endblock %}
