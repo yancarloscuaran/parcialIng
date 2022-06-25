@@ -42,8 +42,23 @@
     }
 </style>
 
+<script>
+    function multipl() {
+        document.F1.T3.value = (document.F1.T1.value) * (document.F1.T2.value)
+    }
+</script>
+
+
 <div class="container">
     <div class="row">
+
+        <form name="F1">
+            <input name="T1" type="number" value="{{sale[4]}}">cantidad
+            <input name="T2" type="text" value="{{sale[5]}}">precio
+            <input name="T3" type="number" value="">total
+        </form>
+        <button onclick="multipl();">Calcular</button>
+
 
         <h1>Factura</h1>
 

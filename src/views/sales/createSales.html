@@ -47,9 +47,9 @@
                         {% if products %}
                             {% for product in products %}
                                 {% if pt == product[0] %}
-                                    <option selected='True' disabled value="{{product[0]}}">{{product[3]}}-{{product[5]}}</option>
+                                    <option selected='True' disabled value="{{product[0]}}">{{product[3]}}</option>
                                 {% else %}
-                                    <option value="{{product[0]}}">{{product[3]}}-{{product[5]}}</option>
+                                    <option value="{{product[0]}}">{{product[3]}}</option>
                                 {% endif %}
                             {% endfor %}
                         {% endif%}
@@ -60,9 +60,25 @@
                     <label for="amount">Cantidad</label>
                     <input class="form-control" type="text" id="amount" name="amount" required>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="value">Precio</label>
                     <input class="form-control" type="text" id="value" name="value" required>
+                </div> -->
+                <div class="mb-3">
+                    <label for="value">Precio</label>
+                    <select name="value" class="form-control" id="value" required>
+                        <option selected ='true' disabled>Precios</option>
+                        {% if products %}
+                            {% for product in products %}
+                                {% if pt == product[0] %}
+                                    <option selected='True' disabled value="{{product[5]}}">{{product[5]}}==>{{product[3]}}</option>
+                                {% else %}
+                                    <option value="{{product[5]}}">{{product[5]}}==>{{product[3]}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif%}
+                    </select>
+                    <a class="btn btn-dark" href="{{url_for('createProducts')}}"><i class="bi bi-plus-square-fill"></i></a>
                 </div>
                 <div class="mb-3">
                     <label for="purchase_date">Fecha compra</label>

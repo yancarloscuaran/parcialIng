@@ -6,38 +6,21 @@
 </head>
 
 <body>
-    <div id="cabecera">
-        <h1>
-            <p><b><u><i><i class="icon2 bi-cart4"></i>Supermarket</i> </u> </b></p>
-        </h1>
-        <h2>Programa para supermercado "La economia"</h2>
-    </div>
-    <div id="pie">
-        <div class="col_pie">
-            <h3>Sobre este sitio</h3>
-            <h4>Integrantes :</h4>
-            <p>Yan Carlos Cuaran Imbacuan</p>
-            <p>Maicol Jossa Campaña</p>
-            <p>Edwar Andres Hernandez</p>
-        </div>
-        <div class="col_pie">
-            <h4>Contactos</h4>
-            <p>Correo : yancuaran2020@itp.edu.co</p>
-            <p>Teléfono: 3163550857</p><br>
 
-            <p>Correo: maicoljossa2020@itp.edu.co</p>
-            <p>Teléfono: 3224455231</p><br>
+    <form name="F1">
+        <select size="1" onclick="multipl()">
+        <option value="seleciona">seleciona</option>
+        </select>
+        <input type="text" name="T1" size="20" value=""> X
+        <input type="text" name="T2" size="20" value=""> =
+        <input type="text" name="T3" size="20" value=""> Total
+    </form>
+    <script>
+        function multipl() {
+            document.F1.T3.value = (document.F1.T1.value) * (document.F1.T2.value)
+        }
+    </script>
 
-            <p>Correo : edwarhernandez2020@itp.edu.co</p>
-            <p>Teléfono: 3154324544</p><br>
-        </div>
-        <div class="col_pie">
-            <h4>En las redes</h4>
-            <p>Facebook : (dirección de Facebook)</p>
-            <p>Twitter: (dirección de Twitter)</p>
-        </div>
-        <div class="vacio"></div>
-    </div>
 </body>
 
 </html>

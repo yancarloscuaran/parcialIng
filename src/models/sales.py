@@ -13,6 +13,8 @@ class saleModel():
         sale = cursor.fetchone()
         cursor.close()
         return sale
+    
+    
 
     def imprimirSales(self, idSale):
         cursor = DB.cursor()
